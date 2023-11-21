@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding:0 ;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    position: relative;
+    color: #000;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+header .navi a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    transition: 0.3s ease-in;
+    transition-property: background;
+}
+
+header .navi a:not(:last-child) {
+    margin-right: 30px;
+}
+
+header .navi a:hover {
+    background-color: #fff;
+    color: #000;
+
+}
+label {
+    display: none;
+}
+
+#check {
+    z-index: 3;
+    display: none;
+}
+/* Home */
+/* About */
+/* Skills */
+/* Projects */
+/* Contact */
+/* Footer */
+
+/* Media Queries */
+@media screen and (max-width: 960px){
+    header .navi{
+        display: none;
+    }
+
+    label {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        transition: 0.3s ease-in;
+        transition-property: color;
+    }
+
+    label:hover {
+        color: #fff;
+    }
+
+    label .close-btn {
+        display: none;
+    }
+
+    #check:checked ~ header .navi {
+        z-index: 2;
+        position: fixed;
+        background: rgba(114, 223, 225, 0.9);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #check:checked ~ header .navi a {
+        font-weight: 700;
+        margin-right: 0;
+        margin-bottom: 52px;
+        letter-spacing: 2px;
+    }
+
+    #check:checked ~ header label .menu-btn {
+        display: none;
+    }
+
+    #check:checked ~ header label .close-btn {
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+
+    label .menu-btn {
+        position: absolute;
+        margin: .5rem 0 0 1.5rem ;
+    }
+
+    header .logo {
+        position: absolute;
+        font-size: 24px;
+        font-weight: 900;
+        bottom: -6px;
+        margin-left: -3rem;
+
+    }
+
+}
+
+@media screen and (max-width: 475px){
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+}
